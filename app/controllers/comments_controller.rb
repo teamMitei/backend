@@ -4,6 +4,10 @@ class CommentsController < ApplicationController
     comments = Comment.order(created_at: :desc)
     render json: { status: 'SUCCESS', message: 'Loaded posts', data: comments }
   end
+  def map_comment
+    @comments_map_id = Comment.where(maps_id: params[:map_id])
+    render json: { status: 'SUCCESS', message: 'Loaded the post', data: @comments_map_id }
+  end
   
   def show
     render json: { status: 'SUCCESS', message: 'Loaded the post', data: @comment }

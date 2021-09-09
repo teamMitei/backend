@@ -10,7 +10,14 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_09_04_143949) do
+ActiveRecord::Schema.define(version: 2021_09_09_054446) do
+
+  create_table "comments", force: :cascade do |t|
+    t.text "body"
+    t.integer "maps_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "maps", force: :cascade do |t|
     t.float "latitude"

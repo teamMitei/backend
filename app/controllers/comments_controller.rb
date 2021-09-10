@@ -33,6 +33,6 @@ class CommentsController < ApplicationController
     @comment = Comment.find(params[:id])
   end
   def post_params
-    params.permit(:body, :maps_id)
+    params.permit(:body, :maps_id, :rank)
   end
 end
